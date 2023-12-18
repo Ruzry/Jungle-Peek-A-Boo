@@ -8,6 +8,8 @@ extends Node2D
 @onready var attractTimer = $AttractTimer
 @onready var gameResetButton = $GameResetButton
 
+@onready var BgAudio = $BGAudio
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	resetGame()
@@ -31,6 +33,8 @@ func _on_timer_timeout():
 func resetFgAnimation():
 	fgAnimPlayer.play("Idle")
 
+func revealAnimationStarted():
+	pass
 
 func _on_game_start_button_pressed():
 	fgAnimPlayer.play("Reveal")

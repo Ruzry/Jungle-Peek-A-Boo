@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7h34omxefl5j"
+path="res://.godot/imported/Jungle Peek A Boo Elephant Reveal sfx.wav-744a92310e4ac2087a360a04bcf04c9e.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Reveal sfx.wav"
+dest_files=["res://.godot/imported/Jungle Peek A Boo Elephant Reveal sfx.wav-744a92310e4ac2087a360a04bcf04c9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dgsgos31p6qvo"
+path="res://.godot/imported/Jungle Peek A Boo Lion Ambience sfx.wav-1a4d311a763c7a3478bfb90e01738a2f.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Jungle Peek A Boo Lion Ambience sfx.wav"
+dest_files=["res://.godot/imported/Jungle Peek A Boo Lion Ambience sfx.wav-1a4d311a763c7a3478bfb90e01738a2f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

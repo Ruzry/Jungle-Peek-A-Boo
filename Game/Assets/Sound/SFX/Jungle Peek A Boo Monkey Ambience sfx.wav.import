@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dks4uarfbc7i7"
+path="res://.godot/imported/Jungle Peek A Boo Monkey Ambience sfx.wav-98f0a507eb9baf62d77e2b8a99a273ac.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/Jungle Peek A Boo Monkey Ambience sfx.wav"
+dest_files=["res://.godot/imported/Jungle Peek A Boo Monkey Ambience sfx.wav-98f0a507eb9baf62d77e2b8a99a273ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

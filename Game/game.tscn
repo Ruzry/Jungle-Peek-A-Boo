@@ -1,12 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://csswk5tkdgm6k"]
+[gd_scene load_steps=27 format=3 uid="uid://csswk5tkdgm6k"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_55div"]
 [ext_resource type="Texture2D" uid="uid://dkmd2n424s5ta" path="res://Assets/Art/Peek A Boo Background 2.png" id="1_eqpnj"]
 [ext_resource type="Texture2D" uid="uid://c1i5qpxnlofo5" path="res://Assets/Art/Peek A Boo Background Trees Dark.png" id="2_5t0uh"]
 [ext_resource type="Texture2D" uid="uid://dyni04xa5y7fo" path="res://Assets/Art/Peek A Boo Vines.png" id="2_84ong"]
+[ext_resource type="Script" path="res://RandomAmbientSound.gd" id="2_ak0co"]
+[ext_resource type="AudioStream" uid="uid://cf2ub2n542xt8" path="res://Assets/Sound/Jungle Peek A Boo Game BG Music.mp3" id="2_jynfr"]
 [ext_resource type="Texture2D" uid="uid://bv72xvrsjxjyp" path="res://Assets/Art/Cartoon Lion Face.png" id="2_pxdc3"]
 [ext_resource type="Texture2D" uid="uid://ca3bhpr33v3tf" path="res://Assets/Art/Cartoon Lion Paw.png" id="3_t26ku"]
 [ext_resource type="Texture2D" uid="uid://ckg17eaorwp8b" path="res://Assets/Art/Peek A Boo Grass 3.png" id="4_63k0l"]
+[ext_resource type="AudioStream" uid="uid://bketymx3c1beb" path="res://Assets/Sound/SFX/Jungle Peek A Boo Rustle sfx 1.wav" id="4_kg6nk"]
 [ext_resource type="Texture2D" uid="uid://cg7rtyn73toul" path="res://Assets/Art/Peek A Boo Jungle Leaf 2.png" id="7_72kkf"]
 [ext_resource type="Texture2D" uid="uid://h0thdshsrktm" path="res://Assets/Art/Peek A Boo Jungle Leaf 5.png" id="8_24j1h"]
 [ext_resource type="Texture2D" uid="uid://dj830unopm02a" path="res://Assets/Art/Peek A Boo Jungle Leaf 1.png" id="8_qj07h"]
@@ -210,6 +213,18 @@ tracks/5/keys = {
 "args": [],
 "method": &"resetFgAnimation"
 }]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RustlingAudio:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_skpcw"]
@@ -731,7 +746,7 @@ tracks/5/path = NodePath("Lion/LeftPaw:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(2.5, 2.7),
+"times": PackedFloat32Array(2.4, 2.7),
 "transitions": PackedFloat32Array(2.14, 1),
 "update": 0,
 "values": [Vector2(-232, 54), Vector2(-350, 25)]
@@ -743,7 +758,7 @@ tracks/6/path = NodePath("Lion/RightPaw:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(2.5, 2.7),
+"times": PackedFloat32Array(2.4, 2.7),
 "transitions": PackedFloat32Array(2.14355, 1),
 "update": 0,
 "values": [Vector2(266, 62), Vector2(350, 30)]
@@ -815,12 +830,27 @@ tracks/12/path = NodePath(".")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(3.3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3.3),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"revealAnimationStarted"
+}, {
 "args": [],
 "method": &"showResetButton"
 }]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("RustlingAudio:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.3, 1.9, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ct6ad"]
@@ -878,6 +908,46 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_55div")
+
+[node name="RandomAmbientSoundEvent" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ak0co")
+
+[node name="AmbienceAudio" type="AudioStreamPlayer2D" parent="RandomAmbientSoundEvent"]
+bus = &"Ambience"
+
+[node name="BGAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jynfr")
+volume_db = -20.0
+autoplay = true
+
+[node name="RustlingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kg6nk")
+pitch_scale = 2.0
+
+[node name="BgAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../FgAnimationPlayer")
+libraries = {
+"": SubResource("AnimationLibrary_abmua")
+}
+
+[node name="FgAnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_ct6ad")
+}
+
+[node name="ButtonAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dvtnj")
+}
+
+[node name="AttractTimer" type="Timer" parent="."]
+wait_time = 8.5
+autostart = true
 
 [node name="BasicBackground" type="Sprite2D" parent="."]
 position = Vector2(670, 401)
@@ -941,23 +1011,17 @@ texture = ExtResource("4_63k0l")
 position = Vector2(647, 386)
 
 [node name="Face" type="Sprite2D" parent="Lion"]
-scale = Vector2(1.25, 1.25)
 texture = ExtResource("2_pxdc3")
 
 [node name="LeftPaw" type="Sprite2D" parent="Lion"]
-z_index = 1
-position = Vector2(-350, 25)
-scale = Vector2(1.25, 1.25)
+position = Vector2(-232, 54)
 texture = ExtResource("3_t26ku")
 
 [node name="RightPaw" type="Sprite2D" parent="Lion"]
-z_index = 1
-position = Vector2(350, 30)
-scale = Vector2(1.25, 1.25)
+position = Vector2(266, 62)
 texture = ExtResource("3_t26ku")
 
 [node name="LeftJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(-350, 25)
 
 [node name="LeftJungleLeaves_0" type="Sprite2D" parent="LeftJungleLeaves"]
 position = Vector2(202, 356)
@@ -1007,7 +1071,7 @@ scale = Vector2(1.29038, -1.31578)
 texture = ExtResource("9_tgwp3")
 
 [node name="RightJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(1700, 25)
+position = Vector2(1331, 0)
 scale = Vector2(-1, 1)
 
 [node name="RightJungleLeaves_0" type="Sprite2D" parent="RightJungleLeaves"]
@@ -1139,27 +1203,7 @@ theme_override_fonts/font = ExtResource("15_es6lh")
 theme_override_font_sizes/font_size = 53
 text = "Reset"
 
-[node name="BgAnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../FgAnimationPlayer")
-libraries = {
-"": SubResource("AnimationLibrary_abmua")
-}
-
-[node name="FgAnimationPlayer" type="AnimationPlayer" parent="."]
-reset_on_save = false
-libraries = {
-"": SubResource("AnimationLibrary_ct6ad")
-}
-
-[node name="ButtonAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_dvtnj")
-}
-
-[node name="AttractTimer" type="Timer" parent="."]
-wait_time = 8.5
-autostart = true
-
+[connection signal="finished" from="RandomAmbientSoundEvent/AmbienceAudio" to="RandomAmbientSoundEvent" method="_on_ambience_audio_finished"]
+[connection signal="timeout" from="AttractTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="GameStartButton" to="." method="_on_game_start_button_pressed"]
 [connection signal="pressed" from="GameResetButton" to="." method="_on_game_reset_button_pressed"]
-[connection signal="timeout" from="AttractTimer" to="." method="_on_timer_timeout"]
