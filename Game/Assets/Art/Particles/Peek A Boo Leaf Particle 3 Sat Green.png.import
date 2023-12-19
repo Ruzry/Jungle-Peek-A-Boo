@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biks0bi4pgabt"
-path="res://.godot/imported/Menu BG.png-14fa96dbff0f9d2e76a65ccd9fc8b7aa.ctex"
+uid="uid://bu3204vena3um"
+path="res://.godot/imported/Peek A Boo Leaf Particle 3 Sat Green.png-350a9973e3e63167e02b9b9dc0550091.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Menu BG.png"
-dest_files=["res://.godot/imported/Menu BG.png-14fa96dbff0f9d2e76a65ccd9fc8b7aa.ctex"]
+source_file="res://Assets/Art/Particles/Peek A Boo Leaf Particle 3 Sat Green.png"
+dest_files=["res://.godot/imported/Peek A Boo Leaf Particle 3 Sat Green.png-350a9973e3e63167e02b9b9dc0550091.ctex"]
 
 [params]
 

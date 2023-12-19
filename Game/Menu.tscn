@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_j84mj"]
 [ext_resource type="FontFile" uid="uid://dlq006xoyyp4b" path="res://Assets/Font/digital_disco/DigitalDisco.ttf" id="2_05yha"]
-[ext_resource type="Texture2D" uid="uid://cjpuvjehk1jc" path="res://Assets/Art/Title BG.png" id="3_5sd05"]
 [ext_resource type="AudioStream" uid="uid://cpcp7mxmbglts" path="res://Assets/Sound/SFX/Jungle Peek A Boo Button Press sfx.wav" id="3_ner70"]
 [ext_resource type="AudioStream" uid="uid://bgjcy042kmh1s" path="res://Assets/Sound/Jungle Peek A Boo Menu BG Music.mp3" id="6_8y17c"]
 [ext_resource type="Texture2D" uid="uid://cckyxcjt2uxdj" path="res://Assets/Art/Peek A Boo Menu Background Sky.png" id="7_r5iyt"]
-[ext_resource type="Theme" uid="uid://qa5fgr0saen3" path="res://Assets/Themes/Button Theme.tres" id="8_0citp"]
 [ext_resource type="Texture2D" uid="uid://bi873tfe5jn2x" path="res://Assets/Art/Peek A Boo Cloud 0.png" id="8_agbc8"]
 [ext_resource type="Texture2D" uid="uid://cv7xugld3sgcu" path="res://Assets/Art/Peek A Boo Cloud 1.png" id="9_lyhew"]
 [ext_resource type="Texture2D" uid="uid://c12ayvfqd05j5" path="res://Assets/Art/Peek A Boo Cloud 2.png" id="10_pev2j"]
 [ext_resource type="Texture2D" uid="uid://pwfow5ht3kpe" path="res://Assets/Art/Peek A Boo Menu Middleground.png" id="11_fx1e2"]
 [ext_resource type="Texture2D" uid="uid://bpboysabobwkh" path="res://Assets/Art/Peek A Boo Cloud 0 Opaque.png" id="12_6hgll"]
 [ext_resource type="Texture2D" uid="uid://c1nb08bqm3xfe" path="res://Assets/Art/Peek A Boo Cloud 2 Opaque.png" id="13_ac5nb"]
+[ext_resource type="Texture2D" uid="uid://dnysflq2n07i7" path="res://Assets/Art/Peek A Boo Title Background.png" id="14_7ujru"]
+[ext_resource type="Theme" uid="uid://d25d7supeakyh" path="res://Assets/Themes/Peek A Boo Menu Button.tres" id="14_hgmnf"]
 [ext_resource type="Texture2D" uid="uid://le7624lop8jq" path="res://Assets/Art/Peek A Boo Menu Foreground.png" id="14_whnex"]
 
 [node name="Menu" type="Control"]
@@ -64,7 +64,8 @@ position = Vector2(108, 108)
 texture = ExtResource("12_6hgll")
 
 [node name="PeekABooCloud2Opaque" type="Sprite2D" parent="FgClouds"]
-position = Vector2(1221, 292)
+position = Vector2(881, 21)
+scale = Vector2(-0.632415, 0.546512)
 texture = ExtResource("13_ac5nb")
 
 [node name="Foreground" type="Sprite2D" parent="."]
@@ -72,10 +73,9 @@ position = Vector2(672, 400)
 texture = ExtResource("14_whnex")
 
 [node name="TitleBackground" type="Sprite2D" parent="."]
-position = Vector2(675, 167)
-rotation = 1.5708
-scale = Vector2(0.18, 0.5)
-texture = ExtResource("3_5sd05")
+position = Vector2(713, 182)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("14_7ujru")
 
 [node name="Title" type="Label" parent="TitleBackground"]
 anchors_preset = 8
@@ -83,16 +83,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -637.0
-offset_top = -173.5
-offset_right = 178.0
-offset_bottom = -73.5
+offset_left = -629.2
+offset_top = -132.8
+offset_right = 185.8
+offset_bottom = -32.8
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -1.5708
-scale = Vector2(1.25, 3)
+theme_override_colors/font_color = Color(1, 0.952941, 0, 1)
 theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 text = "Jungle Peek A Boo"
 
 [node name="Buttons" type="HBoxContainer" parent="."]
@@ -112,7 +111,9 @@ grow_vertical = 2
 [node name="Play Button" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
-theme = ExtResource("8_0citp")
+theme = ExtResource("14_hgmnf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
 theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
 text = "Play"
@@ -120,7 +121,9 @@ text = "Play"
 [node name="Exit Button" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
-theme = ExtResource("8_0citp")
+theme = ExtResource("14_hgmnf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
 theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
 text = "Exit"

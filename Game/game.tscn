@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://csswk5tkdgm6k"]
+[gd_scene load_steps=34 format=3 uid="uid://csswk5tkdgm6k"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_55div"]
 [ext_resource type="Texture2D" uid="uid://dkmd2n424s5ta" path="res://Assets/Art/Peek A Boo Background 2.png" id="1_eqpnj"]
@@ -9,11 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://ca3bhpr33v3tf" path="res://Assets/Art/Cartoon Lion Paw.png" id="3_t26ku"]
 [ext_resource type="Texture2D" uid="uid://ckg17eaorwp8b" path="res://Assets/Art/Peek A Boo Grass 3.png" id="4_63k0l"]
 [ext_resource type="AudioStream" uid="uid://bketymx3c1beb" path="res://Assets/Sound/SFX/Jungle Peek A Boo Rustle sfx 1.wav" id="4_kg6nk"]
+[ext_resource type="AudioStream" uid="uid://c4wk56vsvplaf" path="res://Assets/Sound/Voice/Jungle Peek A Boo Pee Audio.mp3" id="5_a56jk"]
+[ext_resource type="AudioStream" uid="uid://dm110mvkawcdo" path="res://Assets/Sound/Voice/Jungle Peek A Boo Ka Audio.mp3" id="6_j446u"]
+[ext_resource type="AudioStream" uid="uid://cwqhg4au34tm8" path="res://Assets/Sound/Voice/Jungle Peek A Boo Boo Audio.mp3" id="7_7jrpg"]
 [ext_resource type="Texture2D" uid="uid://cg7rtyn73toul" path="res://Assets/Art/Peek A Boo Jungle Leaf 2.png" id="7_72kkf"]
 [ext_resource type="Texture2D" uid="uid://c3nd54epc7klx" path="res://Assets/Art/Peek A Boo Background Trees 50.png" id="7_xyfq4"]
 [ext_resource type="Texture2D" uid="uid://h0thdshsrktm" path="res://Assets/Art/Peek A Boo Jungle Leaf 5.png" id="8_24j1h"]
+[ext_resource type="AudioStream" uid="uid://2aceg4chlosp" path="res://Assets/Sound/SFX/Jungle Peek A Boo Lion Reveal sfx.wav" id="8_pmwnq"]
 [ext_resource type="Texture2D" uid="uid://dj830unopm02a" path="res://Assets/Art/Peek A Boo Jungle Leaf 1.png" id="8_qj07h"]
+[ext_resource type="AudioStream" uid="uid://c7h34omxefl5j" path="res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Reveal sfx.wav" id="9_b386q"]
 [ext_resource type="Texture2D" uid="uid://dp3uwhq1eea1b" path="res://Assets/Art/Peek A Boo Jungle Leaf 3.png" id="9_tgwp3"]
+[ext_resource type="Texture2D" uid="uid://7l83xe0elhra" path="res://Assets/Art/Particles/Peek A Boo Leaf Particle 1 Green.png" id="10_d7olt"]
 [ext_resource type="Texture2D" uid="uid://pres5xjrk78m" path="res://Assets/Art/Peek A Boo Jungle Leaf 4.png" id="12_3yesy"]
 [ext_resource type="Theme" uid="uid://30sui47lwvh7" path="res://Assets/Themes/Peek A Boo Touch Button.tres" id="12_d4qga"]
 [ext_resource type="FontFile" uid="uid://dlq006xoyyp4b" path="res://Assets/Font/digital_disco/DigitalDisco.ttf" id="14_ywep8"]
@@ -840,6 +846,54 @@ tracks/13/keys = {
 "update": 1,
 "values": [true, false, true, false, true, false]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("VoiceAudio/PeeAudio:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("VoiceAudio/KaAudio:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("VoiceAudio/BooAudio:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.5, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("RoarAudio/LionRoarAudio:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ct6ad"]
 _data = {
@@ -894,6 +948,10 @@ _data = {
 "Attract": SubResource("Animation_d5q65")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5benv"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_55div")
 
@@ -916,6 +974,47 @@ autoplay = true
 stream = ExtResource("4_kg6nk")
 pitch_scale = 2.0
 
+[node name="VoiceAudio" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PeeAudio" type="AudioStreamPlayer2D" parent="VoiceAudio"]
+stream = ExtResource("5_a56jk")
+pitch_scale = 1.05
+bus = &"SFX"
+
+[node name="KaAudio" type="AudioStreamPlayer2D" parent="VoiceAudio"]
+stream = ExtResource("6_j446u")
+pitch_scale = 1.05
+bus = &"SFX"
+
+[node name="BooAudio" type="AudioStreamPlayer2D" parent="VoiceAudio"]
+stream = ExtResource("7_7jrpg")
+pitch_scale = 1.1
+bus = &"SFX"
+
+[node name="RoarAudio" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LionRoarAudio" type="AudioStreamPlayer2D" parent="RoarAudio"]
+stream = ExtResource("8_pmwnq")
+pitch_scale = 1.05
+bus = &"SFX"
+
+[node name="ElephantRoarAudio" type="AudioStreamPlayer2D" parent="RoarAudio"]
+stream = ExtResource("9_b386q")
+pitch_scale = 1.05
+bus = &"SFX"
+
+[node name="GorillaAudio" type="AudioStreamPlayer2D" parent="RoarAudio"]
+pitch_scale = 1.1
+bus = &"SFX"
+
 [node name="BgAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../FgAnimationPlayer")
 libraries = {
@@ -936,6 +1035,12 @@ libraries = {
 [node name="AttractTimer" type="Timer" parent="."]
 wait_time = 8.5
 autostart = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-106, -24)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_5benv")
+texture = ExtResource("10_d7olt")
 
 [node name="BasicBackground" type="Sprite2D" parent="."]
 position = Vector2(670, 401)
@@ -1105,6 +1210,7 @@ rotation = 0.39968
 texture = ExtResource("7_72kkf")
 
 [node name="FgGrass" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(671, 702)
 texture = ExtResource("4_63k0l")
 
