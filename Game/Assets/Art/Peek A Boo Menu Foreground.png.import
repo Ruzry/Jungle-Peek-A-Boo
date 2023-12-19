@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1q0lo5kdwlh4"
-path="res://.godot/imported/text.png-f7c9ecd0e4bddb639975ba6126d28c2b.ctex"
+uid="uid://le7624lop8jq"
+path="res://.godot/imported/Peek A Boo Menu Foreground.png-45a566c0ec293f552118367c65abf288.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/text.png"
-dest_files=["res://.godot/imported/text.png-f7c9ecd0e4bddb639975ba6126d28c2b.ctex"]
+source_file="res://Assets/Art/Peek A Boo Menu Foreground.png"
+dest_files=["res://.godot/imported/Peek A Boo Menu Foreground.png-45a566c0ec293f552118367c65abf288.ctex"]
 
 [params]
 

@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmlckx626usll"]
+[gd_scene load_steps=15 format=3 uid="uid://dmlckx626usll"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_j84mj"]
 [ext_resource type="FontFile" uid="uid://dlq006xoyyp4b" path="res://Assets/Font/digital_disco/DigitalDisco.ttf" id="2_05yha"]
-[ext_resource type="Texture2D" uid="uid://biks0bi4pgabt" path="res://Assets/Art/Menu BG.png" id="2_qsgyb"]
 [ext_resource type="Texture2D" uid="uid://cjpuvjehk1jc" path="res://Assets/Art/Title BG.png" id="3_5sd05"]
 [ext_resource type="AudioStream" uid="uid://cpcp7mxmbglts" path="res://Assets/Sound/SFX/Jungle Peek A Boo Button Press sfx.wav" id="3_ner70"]
 [ext_resource type="AudioStream" uid="uid://bgjcy042kmh1s" path="res://Assets/Sound/Jungle Peek A Boo Menu BG Music.mp3" id="6_8y17c"]
+[ext_resource type="Texture2D" uid="uid://cckyxcjt2uxdj" path="res://Assets/Art/Peek A Boo Menu Background Sky.png" id="7_r5iyt"]
 [ext_resource type="Theme" uid="uid://qa5fgr0saen3" path="res://Assets/Themes/Button Theme.tres" id="8_0citp"]
+[ext_resource type="Texture2D" uid="uid://bi873tfe5jn2x" path="res://Assets/Art/Peek A Boo Cloud 0.png" id="8_agbc8"]
+[ext_resource type="Texture2D" uid="uid://cv7xugld3sgcu" path="res://Assets/Art/Peek A Boo Cloud 1.png" id="9_lyhew"]
+[ext_resource type="Texture2D" uid="uid://c12ayvfqd05j5" path="res://Assets/Art/Peek A Boo Cloud 2.png" id="10_pev2j"]
+[ext_resource type="Texture2D" uid="uid://pwfow5ht3kpe" path="res://Assets/Art/Peek A Boo Menu Middleground.png" id="11_fx1e2"]
+[ext_resource type="Texture2D" uid="uid://bpboysabobwkh" path="res://Assets/Art/Peek A Boo Cloud 0 Opaque.png" id="12_6hgll"]
+[ext_resource type="Texture2D" uid="uid://c1nb08bqm3xfe" path="res://Assets/Art/Peek A Boo Cloud 2 Opaque.png" id="13_ac5nb"]
+[ext_resource type="Texture2D" uid="uid://le7624lop8jq" path="res://Assets/Art/Peek A Boo Menu Foreground.png" id="14_whnex"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -28,10 +35,41 @@ stream = ExtResource("3_ner70")
 pitch_scale = 3.0
 bus = &"SFX"
 
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(670, 411)
-texture = ExtResource("2_qsgyb")
-metadata/_edit_lock_ = true
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("7_r5iyt")
+
+[node name="BgClouds" type="Sprite2D" parent="."]
+
+[node name="PeekABooCloud0" type="Sprite2D" parent="BgClouds"]
+position = Vector2(167, 347)
+texture = ExtResource("8_agbc8")
+
+[node name="PeekABooCloud1" type="Sprite2D" parent="BgClouds"]
+position = Vector2(624, 88)
+texture = ExtResource("9_lyhew")
+
+[node name="PeekABooCloud2" type="Sprite2D" parent="BgClouds"]
+position = Vector2(1352, 96)
+texture = ExtResource("10_pev2j")
+
+[node name="Middleground" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("11_fx1e2")
+
+[node name="FgClouds" type="Sprite2D" parent="."]
+
+[node name="PeekABooCloud0Opaque" type="Sprite2D" parent="FgClouds"]
+position = Vector2(108, 108)
+texture = ExtResource("12_6hgll")
+
+[node name="PeekABooCloud2Opaque" type="Sprite2D" parent="FgClouds"]
+position = Vector2(1221, 292)
+texture = ExtResource("13_ac5nb")
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("14_whnex")
 
 [node name="TitleBackground" type="Sprite2D" parent="."]
 position = Vector2(675, 167)

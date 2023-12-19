@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i5qpxnlofo5"
-path="res://.godot/imported/Peek A Boo Background Trees Dark.png-d35544fa1a50cd8492de5c0b6b70e484.ctex"
+uid="uid://cv7xugld3sgcu"
+path="res://.godot/imported/Peek A Boo Cloud 1.png-e872d08df3d451a80b6903d410a7cf33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Background Trees Dark.png"
-dest_files=["res://.godot/imported/Peek A Boo Background Trees Dark.png-d35544fa1a50cd8492de5c0b6b70e484.ctex"]
+source_file="res://Assets/Art/Peek A Boo Cloud 1.png"
+dest_files=["res://.godot/imported/Peek A Boo Cloud 1.png-e872d08df3d451a80b6903d410a7cf33.ctex"]
 
 [params]
 
