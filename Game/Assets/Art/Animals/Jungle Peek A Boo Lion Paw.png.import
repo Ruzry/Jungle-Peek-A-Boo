@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv72xvrsjxjyp"
-path="res://.godot/imported/Cartoon Lion Face.png-23376ac4a8303f51f49ee5e33dcef2e3.ctex"
+uid="uid://ch154ovd5ms6c"
+path="res://.godot/imported/Jungle Peek A Boo Lion Paw.png-2b2cfba1a6aa4dce3ecd63929abf0a03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Cartoon Lion Face.png"
-dest_files=["res://.godot/imported/Cartoon Lion Face.png-23376ac4a8303f51f49ee5e33dcef2e3.ctex"]
+source_file="res://Assets/Art/Animals/Jungle Peek A Boo Lion Paw.png"
+dest_files=["res://.godot/imported/Jungle Peek A Boo Lion Paw.png-2b2cfba1a6aa4dce3ecd63929abf0a03.ctex"]
 
 [params]
 
