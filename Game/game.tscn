@@ -737,7 +737,7 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
-"method": &"revealAnimationStarted"
+"method": &"setRoarAudioStream"
 }, {
 "args": [],
 "method": &"showResetButton"
@@ -794,98 +794,98 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("RoarAudio/LionRoarAudio:playing")
+tracks/10/path = NodePath("Animal/Head:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Animal/Head:scale")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Animal/LeftPaw:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-250, 75), Vector2(-250, 75), Vector2(-330, 45)]
+}
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Animal/LeftPaw:position")
+tracks/12/path = NodePath("Animal/LeftPaw:scale")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 2.4, 2.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-250, 75), Vector2(-250, 75), Vector2(-330, 45)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Animal/LeftPaw:scale")
+tracks/13/path = NodePath("Animal/LeftPaw:z_index")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 2.4, 2.7),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
+"update": 1,
+"values": [0, 0, 1]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Animal/LeftPaw:z_index")
+tracks/14/path = NodePath("Animal/RightPaw:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 2.4, 2.7),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 0, 1]
+"update": 0,
+"values": [Vector2(250, 75), Vector2(250, 75), Vector2(330, 45)]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Animal/RightPaw:position")
+tracks/15/path = NodePath("Animal/RightPaw:scale")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 2.4, 2.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(250, 75), Vector2(250, 75), Vector2(330, 45)]
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Animal/RightPaw:scale")
+tracks/16/path = NodePath("Animal/RightPaw:z_index")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 2.4, 2.7),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
+"update": 1,
+"values": [0, 0, 1]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Animal/RightPaw:z_index")
+tracks/17/path = NodePath("AnimalRoarAudio:playing")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.4, 2.7),
+"times": PackedFloat32Array(0, 2.5, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 0, 1]
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ct6ad"]
@@ -1008,6 +1008,8 @@ bus = &"SFX"
 pitch_scale = 1.1
 bus = &"SFX"
 
+[node name="AnimalRoarAudio" type="AudioStreamPlayer2D" parent="."]
+
 [node name="BgAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../FgAnimationPlayer")
 libraries = {
@@ -1092,7 +1094,7 @@ position = Vector2(647, 386)
 
 [node name="Body" type="Sprite2D" parent="Animal"]
 
-[node name="Elephant Body" type="Sprite2D" parent="Animal/Body"]
+[node name="ElephantBody" type="Sprite2D" parent="Animal/Body"]
 texture = ExtResource("15_nmeva")
 
 [node name="Head" type="Sprite2D" parent="Animal"]
@@ -1109,7 +1111,8 @@ texture = ExtResource("17_w3p0d")
 texture = ExtResource("18_1kof7")
 
 [node name="LeftPaw" type="Sprite2D" parent="Animal"]
-position = Vector2(-250, 75)
+position = Vector2(-330, 45)
+scale = Vector2(1.25, 1.25)
 
 [node name="LionLeftPaw" type="Sprite2D" parent="Animal/LeftPaw"]
 visible = false
@@ -1125,7 +1128,8 @@ texture = ExtResource("20_lxcip")
 texture = ExtResource("21_guhv4")
 
 [node name="RightPaw" type="Sprite2D" parent="Animal"]
-position = Vector2(250, 75)
+position = Vector2(330, 45)
+scale = Vector2(1.25, 1.25)
 
 [node name="LionRightPaw" type="Sprite2D" parent="Animal/RightPaw"]
 visible = false
@@ -1143,7 +1147,7 @@ scale = Vector2(-1, 1)
 texture = ExtResource("21_guhv4")
 
 [node name="LeftJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(5, -5)
+position = Vector2(-350, 25)
 
 [node name="LeftJungleLeaves_0" type="Sprite2D" parent="LeftJungleLeaves"]
 position = Vector2(202, 356)
@@ -1193,7 +1197,7 @@ scale = Vector2(1.29038, -1.31578)
 texture = ExtResource("9_tgwp3")
 
 [node name="RightJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(1331, 0)
+position = Vector2(1700, 25)
 scale = Vector2(-1, 1)
 
 [node name="RightJungleLeaves_0" type="Sprite2D" parent="RightJungleLeaves"]
@@ -1262,7 +1266,7 @@ offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(82, 38)
-theme_override_colors/font_color = Color(1, 0.952941, 0, 0.333333)
+theme_override_colors/font_color = Color(1, 0.952941, 0, 0)
 theme_override_fonts/font = ExtResource("14_ywep8")
 theme_override_font_sizes/font_size = 75
 text = "Peek"
