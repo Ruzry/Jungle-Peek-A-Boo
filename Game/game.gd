@@ -60,7 +60,9 @@ func resetGame():
 	bgAnimPlayer.play("Idle")
 	btnAnimPlayer.play("Attract")
 	gameStartButton.visible = true
+	gameStartButton.disabled = false
 	gameResetButton.visible = false
+	gameResetButton.disabled = true
 
 # Set animal to be loaded.
 func setCurrentAnimal(animalIndex: int):
@@ -93,11 +95,13 @@ func setRoarAudioStream():
 func startReveal():
 	fgAnimPlayer.play("Reveal")
 	gameStartButton.visible = false
+	gameStartButton.disabled = true
 	attractTimer.stop()
 
 # Called by reveal animation to display reset button at the end of animation.
 func showResetButton():
-	gameResetButton.visible = true;
+	gameResetButton.visible = true
+	gameResetButton.disabled = false
 
 # Emits signal to Menu to close the game scene.
 func returnToMenu():

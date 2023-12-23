@@ -1137,7 +1137,8 @@ texture = ExtResource("17_w3p0d")
 texture = ExtResource("18_1kof7")
 
 [node name="LeftPaw" type="Sprite2D" parent="Animal"]
-position = Vector2(-250, 75)
+position = Vector2(-330, 45)
+scale = Vector2(1.25, 1.25)
 
 [node name="LionLeftPaw" type="Sprite2D" parent="Animal/LeftPaw"]
 visible = false
@@ -1153,7 +1154,8 @@ texture = ExtResource("20_lxcip")
 texture = ExtResource("21_guhv4")
 
 [node name="RightPaw" type="Sprite2D" parent="Animal"]
-position = Vector2(250, 75)
+position = Vector2(330, 45)
+scale = Vector2(1.25, 1.25)
 
 [node name="LionRightPaw" type="Sprite2D" parent="Animal/RightPaw"]
 visible = false
@@ -1171,6 +1173,7 @@ scale = Vector2(-1, 1)
 texture = ExtResource("21_guhv4")
 
 [node name="LeftJungleLeaves" type="Sprite2D" parent="."]
+position = Vector2(-350, 25)
 
 [node name="LeftJungleLeaves_0" type="Sprite2D" parent="LeftJungleLeaves"]
 position = Vector2(202, 356)
@@ -1220,7 +1223,7 @@ scale = Vector2(1.29038, -1.31578)
 texture = ExtResource("22_xhyes")
 
 [node name="RightJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(1331, 0)
+position = Vector2(1700, 25)
 scale = Vector2(-1, 1)
 
 [node name="RightJungleLeaves_0" type="Sprite2D" parent="RightJungleLeaves"]
@@ -1276,13 +1279,13 @@ position = Vector2(671, 702)
 texture = ExtResource("11_cwwol")
 
 [node name="PointStarParticles" type="GPUParticles2D" parent="."]
-position = Vector2(531, 254)
+position = Vector2(835, 555)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("24_ywdcf")
 
 [node name="BoxStyleParticles" type="GPUParticles2D" parent="."]
-position = Vector2(653, 238)
+position = Vector2(625, 533)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("26_rlhol")
@@ -1347,7 +1350,6 @@ pivot_offset = Vector2(75, 75)
 theme = ExtResource("12_d4qga")
 
 [node name="GameResetButton" type="Button" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 anchors_preset = 8
 anchor_left = 0.5

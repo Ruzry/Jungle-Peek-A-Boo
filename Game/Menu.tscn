@@ -133,7 +133,7 @@ theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 40
 text = " Play as Gorilla"
 
-[node name="Exit Button" type="Button" parent="Buttons"]
+[node name="ExitButton" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
 theme = ExtResource("14_hgmnf")
@@ -149,5 +149,5 @@ text = "Exit"
 [connection signal="pressed" from="Buttons/ElephantButton" to="." method="startGameScene" binds= [1]]
 [connection signal="button_down" from="Buttons/GorillaButton" to="." method="playButtonPressSound"]
 [connection signal="pressed" from="Buttons/GorillaButton" to="." method="startGameScene" binds= [2]]
-[connection signal="button_down" from="Buttons/Exit Button" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="Buttons/Exit Button" to="." method="exitGame"]
+[connection signal="button_down" from="Buttons/ExitButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="exitGame"]
