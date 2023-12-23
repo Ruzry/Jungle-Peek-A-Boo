@@ -2,6 +2,7 @@ extends Control
 
 @onready var audio = $AmbienceAudio
 
+#Animals Sounds
 @onready var birdSound0 = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Bird Ambience sfx 0.wav")
 @onready var birdSound1 = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Bird Ambience sfx 1.wav")
 @onready var elephantSound = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Ambience sfx.wav")
@@ -17,17 +18,17 @@ var animalSounds : Array
 var upperTimeLimit = 8
 var lowerTimeLimit = 6
 
+# randomize to make sure our random numbers are always random.
+# Populates array with animal sounds.
 func _ready():
-	# randomize to make sure our random numbers are always random
 	randomize() 
 	
 	animalSounds = [ birdSound0, birdSound1, gibbonBirdSound, elephantSound, frogSound0, frogSound1, frogSound2, lionSound, monkeySound, snakeSound ] 
 	
 	playRandomSound()
 
-
+# Plays a random sound from the array on a timer range.
 func playRandomSound():
-	
 	var time = randi_range(lowerTimeLimit, upperTimeLimit)
 	await get_tree().create_timer(time).timeout
 	
@@ -37,7 +38,3 @@ func playRandomSound():
 	audio.stream = soundToPlay
 	audio.play()
 
-
-func _on_ambience_audio_finished():
-	
-	playRandomSound()

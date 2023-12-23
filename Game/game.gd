@@ -1,28 +1,33 @@
 extends Node2D
 
-enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA}
+enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA }
 
 #Animation Players
 @onready var fgAnimPlayer = $FgAnimationPlayer
 @onready var bgAnimPlayer = $BgAnimationPlayer
 @onready var btnAnimPlayer = $ButtonAnimationPlayer
+
 #General Nodes
 @onready var gameStartButton = $GameStartButton
 @onready var attractTimer = $AttractTimer
 @onready var gameResetButton = $GameResetButton
+
 #Lion Nodes
 @onready var lionHeadSprite = $Animal/Head/LionHead
 @onready var lionLeftPawSprite = $Animal/LeftPaw/LionLeftPaw
 @onready var lionRightPawSprite = $Animal/RightPaw/LionRightPaw
+
 #Elephant Nodes
 @onready var elephantHeadSprite = $Animal/Head/ElephantHead
 @onready var elephantBodySprite = $Animal/Body/ElephantBody
 @onready var elephantLeftPawSprite = $Animal/LeftPaw/ElephantLeftPaw
 @onready var elephantRightPawSprite = $Animal/RightPaw/ElephantRightPaw
+
 #Gorilla nodes
 @onready var gorillaHeadSprite = $Animal/Head/GorillaHead
 @onready var gorillaLeftPawSprite = $Animal/LeftPaw/GorillaLeftPaw
 @onready var gorillaRightPawSprite = $Animal/RightPaw/GorillaRightPaw
+
 #Audio
 @onready var bgAudio = $BGAudio
 @onready var animalRoarAudio = $AnimalRoarAudio
@@ -35,7 +40,7 @@ var lionNodeSprites: Array
 var elephantNodeSprites: Array
 var gorillaNodeSprites: Array
 
-var animalIndex: int
+var currentAnimal: ANIMAL_TYPE
 var animalAudioStreams: Array
 
 signal menuReturn
@@ -49,6 +54,7 @@ func _ready():
 	setAnimalVisiblity()
 	resetGame()
 
+# Sets game components to default state.
 func resetGame():
 	fgAnimPlayer.play("Idle")
 	bgAnimPlayer.play("Idle")
@@ -56,48 +62,44 @@ func resetGame():
 	gameStartButton.visible = true
 	gameResetButton.visible = false
 
+# Set animal to be loaded.
+func setCurrentAnimal(animalIndex: int):
+	currentAnimal = animalIndex as ANIMAL_TYPE
 
-func setAnimalIndex(animalIndex_: int):
-	animalIndex = animalIndex_
-
-
+# Sets visibility of Animal Sprite Nodes.
 func setAnimalVisiblity():
 	for n in lionNodeSprites.size():
-		lionNodeSprites[n].visible = true if (animalIndex == ANIMAL_TYPE.LION) else false
+		lionNodeSprites[n].visible = true if (currentAnimal == ANIMAL_TYPE.LION) else false
 		
 	for n in elephantNodeSprites.size():
-		elephantNodeSprites[n].visible = true if (animalIndex == ANIMAL_TYPE.ELEPHANT) else false
+		elephantNodeSprites[n].visible = true if (currentAnimal == ANIMAL_TYPE.ELEPHANT) else false
 		
 	for n in gorillaNodeSprites.size():
-		gorillaNodeSprites[n].visible = true if (animalIndex == ANIMAL_TYPE.GORILLA) else false
+		gorillaNodeSprites[n].visible = true if (currentAnimal == ANIMAL_TYPE.GORILLA) else false
 
-
-func _on_timer_timeout():
+#Plays attract animation based on AttractTimer
+func playAttractAnimation():
 	fgAnimPlayer.play("Attract")
 
-
+#Sets forground animation to idle state. 
 func resetFgAnimation():
 	fgAnimPlayer.play("Idle")
 
-
+# Sets roar based on currentAnimal.
 func setRoarAudioStream():
-	animalRoarAudio.stream = animalAudioStreams[animalIndex]
+	animalRoarAudio.stream = animalAudioStreams[currentAnimal]
 
-
-func _on_game_start_button_pressed():
+# Start Reveal animation.
+func startReveal():
 	fgAnimPlayer.play("Reveal")
 	gameStartButton.visible = false
 	attractTimer.stop()
 
-
+# Called by reveal animation to display reset button at the end of animation.
 func showResetButton():
 	gameResetButton.visible = true;
 
-
-func _on_game_reset_button_pressed():
-	resetGame()
-
-
+# Emits signal to Menu to close the game scene.
 func returnToMenu():
 	emit_signal("menuReturn")
 
