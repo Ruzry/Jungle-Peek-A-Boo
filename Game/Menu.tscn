@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmlckx626usll"]
+[gd_scene load_steps=15 format=3 uid="uid://dmlckx626usll"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_j84mj"]
 [ext_resource type="FontFile" uid="uid://dlq006xoyyp4b" path="res://Assets/Font/digital_disco/DigitalDisco.ttf" id="2_05yha"]
-[ext_resource type="Texture2D" uid="uid://biks0bi4pgabt" path="res://Assets/Art/Menu BG.png" id="2_qsgyb"]
-[ext_resource type="Texture2D" uid="uid://cjpuvjehk1jc" path="res://Assets/Art/Title BG.png" id="3_5sd05"]
-[ext_resource type="Theme" uid="uid://qa5fgr0saen3" path="res://Assets/Themes/Button Theme.tres" id="8_0citp"]
+[ext_resource type="AudioStream" uid="uid://cpcp7mxmbglts" path="res://Assets/Sound/SFX/Jungle Peek A Boo Button Press sfx.wav" id="3_ner70"]
+[ext_resource type="Texture2D" uid="uid://ctxty6c8dp7db" path="res://Assets/Art/Menu/Peek A Boo Menu Background Sky.png" id="4_fyhsr"]
+[ext_resource type="Texture2D" uid="uid://cny0ohn18cum4" path="res://Assets/Art/Menu/Peek A Boo Cloud 0.png" id="5_awpg5"]
+[ext_resource type="Texture2D" uid="uid://ncrp3fgmu2vy" path="res://Assets/Art/Menu/Peek A Boo Cloud 1.png" id="6_8xmrw"]
+[ext_resource type="AudioStream" uid="uid://bgjcy042kmh1s" path="res://Assets/Sound/Jungle Peek A Boo Menu BG Music.mp3" id="6_8y17c"]
+[ext_resource type="Texture2D" uid="uid://dk55hfygklbh3" path="res://Assets/Art/Menu/Peek A Boo Cloud 2.png" id="7_ybbq5"]
+[ext_resource type="Texture2D" uid="uid://g05vjn66gfa4" path="res://Assets/Art/Menu/Peek A Boo Menu Middleground.png" id="8_f7dlx"]
+[ext_resource type="Texture2D" uid="uid://c2p7sln6t7nau" path="res://Assets/Art/Menu/Peek A Boo Cloud 0 Opaque.png" id="9_4o64r"]
+[ext_resource type="Texture2D" uid="uid://bats18brm1uvy" path="res://Assets/Art/Menu/Peek A Boo Cloud 1 Opaque.png" id="10_cebgk"]
+[ext_resource type="Texture2D" uid="uid://ds5ed63lsq6ig" path="res://Assets/Art/Menu/Peek A Boo Menu Foreground.png" id="11_ao0s0"]
+[ext_resource type="Texture2D" uid="uid://b0tkrgkwlgvis" path="res://Assets/Art/Menu/Peek A Boo Title Background.png" id="12_mtaxl"]
+[ext_resource type="Theme" uid="uid://d25d7supeakyh" path="res://Assets/Themes/Peek A Boo Menu Button.tres" id="14_hgmnf"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -15,16 +24,58 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_j84mj")
 
-[node name="Bg" type="Sprite2D" parent="."]
-position = Vector2(670, 411)
-texture = ExtResource("2_qsgyb")
-metadata/_edit_lock_ = true
+[node name="BackgroundAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8y17c")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="SfxAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ner70")
+pitch_scale = 3.0
+bus = &"SFX"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("4_fyhsr")
+
+[node name="BgClouds" type="Sprite2D" parent="."]
+
+[node name="PeekABooCloud0" type="Sprite2D" parent="BgClouds"]
+position = Vector2(167, 347)
+texture = ExtResource("5_awpg5")
+
+[node name="PeekABooCloud1" type="Sprite2D" parent="BgClouds"]
+position = Vector2(624, 88)
+texture = ExtResource("6_8xmrw")
+
+[node name="PeekABooCloud2" type="Sprite2D" parent="BgClouds"]
+position = Vector2(1352, 96)
+texture = ExtResource("7_ybbq5")
+
+[node name="Middleground" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("8_f7dlx")
+
+[node name="FgClouds" type="Sprite2D" parent="."]
+
+[node name="PeekABooCloud0Opaque" type="Sprite2D" parent="FgClouds"]
+position = Vector2(108, 108)
+texture = ExtResource("9_4o64r")
+
+[node name="PeekABooCloud1Opaque" type="Sprite2D" parent="FgClouds"]
+position = Vector2(881, 21)
+scale = Vector2(-0.632415, 0.546512)
+texture = ExtResource("10_cebgk")
+
+[node name="Foreground" type="Sprite2D" parent="."]
+position = Vector2(672, 400)
+texture = ExtResource("11_ao0s0")
 
 [node name="TitleBackground" type="Sprite2D" parent="."]
-position = Vector2(675, 167)
-rotation = 1.5708
-scale = Vector2(0.18, 0.5)
-texture = ExtResource("3_5sd05")
+position = Vector2(713, 135)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("12_mtaxl")
 
 [node name="Title" type="Label" parent="TitleBackground"]
 anchors_preset = 8
@@ -32,47 +83,71 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -637.0
-offset_top = -173.5
-offset_right = 178.0
-offset_bottom = -73.5
+offset_left = -629.2
+offset_top = -132.8
+offset_right = 185.8
+offset_bottom = -32.8
 grow_horizontal = 2
 grow_vertical = 2
-rotation = -1.5708
-scale = Vector2(1.25, 3)
-theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 100
-text = "Jungle Peek A Boo"
-
-[node name="Buttons" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -310.0
-offset_top = -53.5
-offset_right = 310.0
-offset_bottom = 53.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Play Button" type="Button" parent="Buttons"]
-custom_minimum_size = Vector2(308, 107)
-layout_mode = 2
-theme = ExtResource("8_0citp")
+theme_override_colors/font_color = Color(1, 0.952941, 0, 1)
 theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
-text = "Play"
+text = "Jungle Peek A Boo"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.65
+offset_left = -200.0
+offset_top = -220.0
+offset_right = 200.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 220)
+
+[node name="LionButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(308, 107)
+layout_mode = 2
+theme = ExtResource("14_hgmnf")
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 40
+text = "Play as Lion"
+
+[node name="ElephantButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(308, 107)
+layout_mode = 2
+theme = ExtResource("14_hgmnf")
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 40
+text = "Play as Elephant"
+
+[node name="GorillaButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(308, 107)
+layout_mode = 2
+theme = ExtResource("14_hgmnf")
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 40
+text = " Play as Gorilla"
 
 [node name="Exit Button" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
-theme = ExtResource("8_0citp")
+theme = ExtResource("14_hgmnf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
 theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
-[connection signal="pressed" from="Buttons/Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Buttons/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="Buttons/LionButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/LionButton" to="." method="startGameScene" binds= [0]]
+[connection signal="button_down" from="Buttons/ElephantButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/ElephantButton" to="." method="startGameScene" binds= [1]]
+[connection signal="button_down" from="Buttons/GorillaButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/GorillaButton" to="." method="startGameScene" binds= [2]]
+[connection signal="button_down" from="Buttons/Exit Button" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/Exit Button" to="." method="exitGame"]
