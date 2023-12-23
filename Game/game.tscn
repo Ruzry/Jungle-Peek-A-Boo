@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://csswk5tkdgm6k"]
+[gd_scene load_steps=39 format=3 uid="uid://csswk5tkdgm6k"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_55div"]
 [ext_resource type="Texture2D" uid="uid://dkmd2n424s5ta" path="res://Assets/Art/Peek A Boo Background 2.png" id="1_eqpnj"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cawcjye2owmal" path="res://Assets/Art/Animals/Jungle Peek A Boo Gorilla Hand.png" id="21_guhv4"]
 [ext_resource type="Texture2D" uid="uid://c75remnosfv13" path="res://Assets/Art/Particles/Peek A Boo Star 0.png" id="24_ywdcf"]
 [ext_resource type="Texture2D" uid="uid://hye6r362lqx8" path="res://Assets/Art/Particles/Peek A Boo Star 1.png" id="26_rlhol"]
+[ext_resource type="Theme" uid="uid://ug5cn1yu1ks6" path="res://Assets/Themes/Peek A Boo Return Button.tres" id="29_xbl6h"]
 
 [sub_resource type="Animation" id="Animation_3efg7"]
 resource_name = "Idle"
@@ -1366,7 +1367,13 @@ theme_override_fonts/font = ExtResource("15_es6lh")
 theme_override_font_sizes/font_size = 53
 text = "Reset"
 
+[node name="MenuReturnButton" type="Button" parent="."]
+offset_right = 73.0
+offset_bottom = 57.0
+theme = ExtResource("29_xbl6h")
+
 [connection signal="finished" from="RandomAmbientSoundEvent/AmbienceAudio" to="RandomAmbientSoundEvent" method="_on_ambience_audio_finished"]
 [connection signal="timeout" from="AttractTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="GameStartButton" to="." method="_on_game_start_button_pressed"]
 [connection signal="pressed" from="GameResetButton" to="." method="_on_game_reset_button_pressed"]
+[connection signal="pressed" from="MenuReturnButton" to="." method="returnToMenu"]

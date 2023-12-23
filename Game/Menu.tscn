@@ -22,7 +22,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Play Button:disabled")
+tracks/0/path = NodePath("Play Button:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -34,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Play Button:visible")
+tracks/1/path = NodePath("Play Button:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -46,7 +46,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/Exit Button:disabled")
+tracks/2/path = NodePath("VBoxContainer/Exit Button:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -58,7 +58,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/Exit Button:visible")
+tracks/3/path = NodePath("VBoxContainer/Exit Button:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -70,7 +70,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimalButtons/LionButton:disabled")
+tracks/4/path = NodePath("VBoxContainer/LionButton:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -82,7 +82,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimalButtons/LionButton:visible")
+tracks/5/path = NodePath("VBoxContainer/LionButton:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -94,7 +94,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AnimalButtons/ElephantButton:disabled")
+tracks/6/path = NodePath("VBoxContainer/ElephantButton:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -106,7 +106,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AnimalButtons/ElephantButton:visible")
+tracks/7/path = NodePath("VBoxContainer/ElephantButton:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -118,7 +118,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AnimalButtons/GorillaButton:disabled")
+tracks/8/path = NodePath("VBoxContainer/GorillaButton:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -130,7 +130,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("AnimalButtons/GorillaButton:visible")
+tracks/9/path = NodePath("VBoxContainer/GorillaButton:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -159,7 +159,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Buttons/Play Button:disabled")
+tracks/0/path = NodePath("Play Button:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -171,7 +171,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Buttons/Play Button:visible")
+tracks/1/path = NodePath("Play Button:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -183,7 +183,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Buttons/Exit Button:disabled")
+tracks/2/path = NodePath("VBoxContainer/Exit Button:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -195,7 +195,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Buttons/Exit Button:visible")
+tracks/3/path = NodePath("VBoxContainer/Exit Button:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -207,7 +207,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("AnimalButtons/LionButton:disabled")
+tracks/4/path = NodePath("VBoxContainer/LionButton:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -219,7 +219,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("AnimalButtons/LionButton:visible")
+tracks/5/path = NodePath("VBoxContainer/LionButton:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -231,7 +231,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("AnimalButtons/ElephantButton:disabled")
+tracks/6/path = NodePath("VBoxContainer/ElephantButton:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -243,7 +243,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("AnimalButtons/ElephantButton:visible")
+tracks/7/path = NodePath("VBoxContainer/ElephantButton:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -255,7 +255,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("AnimalButtons/GorillaButton:disabled")
+tracks/8/path = NodePath("VBoxContainer/GorillaButton:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -267,7 +267,7 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("AnimalButtons/GorillaButton:visible")
+tracks/9/path = NodePath("VBoxContainer/GorillaButton:visible")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -305,10 +305,10 @@ grow_vertical = 2
 script = ExtResource("1_j84mj")
 
 [node name="MenuAnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_sgnci")
 }
-autoplay = "Idle"
 
 [node name="BackgroundAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_8y17c")
@@ -395,30 +395,6 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(310, 53.5)
 
-[node name="Play Button" type="Button" parent="Buttons"]
-visible = false
-custom_minimum_size = Vector2(308, 107)
-layout_mode = 2
-theme = ExtResource("14_hgmnf")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
-theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 50
-disabled = true
-text = "Play"
-
-[node name="Exit Button" type="Button" parent="Buttons"]
-visible = false
-custom_minimum_size = Vector2(308, 107)
-layout_mode = 2
-theme = ExtResource("14_hgmnf")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
-theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 50
-disabled = true
-text = "Exit"
-
 [node name="AnimalButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -434,37 +410,88 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(154, 164.5)
 
-[node name="LionButton" type="Button" parent="AnimalButtons"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 204.0
+offset_top = 291.0
+offset_right = 1136.0
+offset_bottom = 398.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(466, 53.5)
+
+[node name="Play Button" type="Button" parent="."]
+visible = false
+custom_minimum_size = Vector2(308, 107)
+layout_mode = 2
+offset_left = 470.0
+offset_top = 482.0
+offset_right = 870.0
+offset_bottom = 589.0
+theme = ExtResource("14_hgmnf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Play"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.65
+offset_left = -200.0
+offset_top = -220.0
+offset_right = 200.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 220)
+
+[node name="LionButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
 theme = ExtResource("14_hgmnf")
 theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 50
-text = " Lion"
+theme_override_font_sizes/font_size = 40
+text = "Play Lion"
 
-[node name="ElephantButton" type="Button" parent="AnimalButtons"]
+[node name="ElephantButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
 theme = ExtResource("14_hgmnf")
 theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 50
-text = " Elephant"
+theme_override_font_sizes/font_size = 40
+text = "Play Elephant"
 
-[node name="GorillaButton" type="Button" parent="AnimalButtons"]
+[node name="GorillaButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
 theme = ExtResource("14_hgmnf")
 theme_override_fonts/font = ExtResource("2_05yha")
-theme_override_font_sizes/font_size = 50
-text = " Gorilla"
+theme_override_font_sizes/font_size = 40
+text = " Play Gorilla"
 
-[connection signal="button_down" from="Buttons/Play Button" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="Buttons/Play Button" to="." method="_on_play_button_pressed"]
-[connection signal="button_down" from="Buttons/Exit Button" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="Buttons/Exit Button" to="." method="_on_exit_button_pressed"]
-[connection signal="button_down" from="AnimalButtons/LionButton" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="AnimalButtons/LionButton" to="." method="startGameScene" binds= [0]]
-[connection signal="button_down" from="AnimalButtons/ElephantButton" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="AnimalButtons/ElephantButton" to="." method="startGameScene" binds= [1]]
-[connection signal="button_down" from="AnimalButtons/GorillaButton" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="AnimalButtons/GorillaButton" to="." method="startGameScene" binds= [2]]
+[node name="Exit Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(308, 107)
+layout_mode = 2
+theme = ExtResource("14_hgmnf")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.952941, 0, 1)
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[connection signal="button_down" from="Play Button" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/LionButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="VBoxContainer/LionButton" to="." method="startGameScene" binds= [0]]
+[connection signal="button_down" from="VBoxContainer/ElephantButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="VBoxContainer/ElephantButton" to="." method="startGameScene" binds= [1]]
+[connection signal="button_down" from="VBoxContainer/GorillaButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="VBoxContainer/GorillaButton" to="." method="startGameScene" binds= [2]]
+[connection signal="button_down" from="VBoxContainer/Exit Button" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="VBoxContainer/Exit Button" to="." method="_on_exit_button_pressed"]

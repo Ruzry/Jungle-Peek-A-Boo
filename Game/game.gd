@@ -24,7 +24,7 @@ enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA}
 @onready var gorillaLeftPawSprite = $Animal/LeftPaw/GorillaLeftPaw
 @onready var gorillaRightPawSprite = $Animal/RightPaw/GorillaRightPaw
 #Audio
-@onready var BgAudio = $BGAudio
+@onready var bgAudio = $BGAudio
 @onready var animalRoarAudio = $AnimalRoarAudio
 @onready var lionRoar = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Lion Reveal sfx.wav")
 @onready var elephantRoar = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Reveal sfx.wav")
@@ -37,6 +37,8 @@ var gorillaNodeSprites: Array
 
 var animalIndex: int
 var animalAudioStreams: Array
+
+signal menuReturn
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,10 +55,6 @@ func resetGame():
 	btnAnimPlayer.play("Attract")
 	gameStartButton.visible = true
 	gameResetButton.visible = false
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func setAnimalIndex(animalIndex_: int):
@@ -98,4 +96,8 @@ func showResetButton():
 
 func _on_game_reset_button_pressed():
 	resetGame()
+
+
+func returnToMenu():
+	emit_signal("menuReturn")
 

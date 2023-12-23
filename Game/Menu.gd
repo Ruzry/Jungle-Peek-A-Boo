@@ -1,9 +1,14 @@
 extends Control
 
-var gameScene = preload("res://game.tscn").instantiate()
 @onready var sfxAudio = $SfxAudio
 @onready var bgAudio = $BackgroundAudio
 @onready var menuAnimationPlayer = $MenuAnimationPlayer
+
+var gameScene
+
+func handleMenuReturn():
+	get_tree().root.remove_child(gameScene)
+	bgAudio.play()
 
 
 func _on_play_button_pressed():
@@ -11,6 +16,8 @@ func _on_play_button_pressed():
 
 
 func startGameScene(animalIndex):
+	gameScene = preload("res://game.tscn").instantiate()
+	gameScene.connect("menuReturn", func(): handleMenuReturn())
 	gameScene.setAnimalIndex(animalIndex)
 	bgAudio.stop()
 	get_tree().root.add_child(gameScene)
