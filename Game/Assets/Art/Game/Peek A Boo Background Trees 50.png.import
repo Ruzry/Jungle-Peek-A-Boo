@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn8idxo8gpikl"
-path="res://.godot/imported/Peek A Boo Grass 2.png-19a658d861988930f04a6bf20928026e.ctex"
+uid="uid://b068omrlt2utn"
+path="res://.godot/imported/Peek A Boo Background Trees 50.png-10890c55046f34b0f515691d22a7ecee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Grass 2.png"
-dest_files=["res://.godot/imported/Peek A Boo Grass 2.png-19a658d861988930f04a6bf20928026e.ctex"]
+source_file="res://Assets/Art/Game/Peek A Boo Background Trees 50.png"
+dest_files=["res://.godot/imported/Peek A Boo Background Trees 50.png-10890c55046f34b0f515691d22a7ecee.ctex"]
 
 [params]
 

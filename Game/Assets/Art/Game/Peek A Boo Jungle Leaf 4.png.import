@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dncfv07nme5w8"
-path="res://.godot/imported/Peek A Boo Return Button UnPressed.png-5315341e73f0548f11e4ece659d2ce1f.ctex"
+uid="uid://cd4viv5vunat7"
+path="res://.godot/imported/Peek A Boo Jungle Leaf 4.png-75e280e56672b8867a1a881102d79165.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Return Button UnPressed.png"
-dest_files=["res://.godot/imported/Peek A Boo Return Button UnPressed.png-5315341e73f0548f11e4ece659d2ce1f.ctex"]
+source_file="res://Assets/Art/Game/Peek A Boo Jungle Leaf 4.png"
+dest_files=["res://.godot/imported/Peek A Boo Jungle Leaf 4.png-75e280e56672b8867a1a881102d79165.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyyuw5qaeu2e4"
-path="res://.godot/imported/Peek A Boo Cloud 1 Opaque.png-f8ad619fed53b7925f6f9d43c321e51c.ctex"
+uid="uid://ctxty6c8dp7db"
+path="res://.godot/imported/Peek A Boo Menu Background Sky.png-71405c3afe259f426509cc0ca3fd2c16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Cloud 1 Opaque.png"
-dest_files=["res://.godot/imported/Peek A Boo Cloud 1 Opaque.png-f8ad619fed53b7925f6f9d43c321e51c.ctex"]
+source_file="res://Assets/Art/Menu/Peek A Boo Menu Background Sky.png"
+dest_files=["res://.godot/imported/Peek A Boo Menu Background Sky.png-71405c3afe259f426509cc0ca3fd2c16.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyni04xa5y7fo"
-path="res://.godot/imported/Peek A Boo Vines.png-9d84d9d2676b314429ec94c8b0390e42.ctex"
+uid="uid://g05vjn66gfa4"
+path="res://.godot/imported/Peek A Boo Menu Middleground.png-fd4c646fbbdec275da95959fbc13b292.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Vines.png"
-dest_files=["res://.godot/imported/Peek A Boo Vines.png-9d84d9d2676b314429ec94c8b0390e42.ctex"]
+source_file="res://Assets/Art/Menu/Peek A Boo Menu Middleground.png"
+dest_files=["res://.godot/imported/Peek A Boo Menu Middleground.png-fd4c646fbbdec275da95959fbc13b292.ctex"]
 
 [params]
 

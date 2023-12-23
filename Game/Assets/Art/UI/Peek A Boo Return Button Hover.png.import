@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://broqfinixycfr"
-path="res://.godot/imported/bg.png-1248cec87d750ff2ffa75cb152991d33.ctex"
+uid="uid://cqmvncu5r0k1y"
+path="res://.godot/imported/Peek A Boo Return Button Hover.png-efb851463c15392103ce72d56984bd19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/bg.png"
-dest_files=["res://.godot/imported/bg.png-1248cec87d750ff2ffa75cb152991d33.ctex"]
+source_file="res://Assets/Art/UI/Peek A Boo Return Button Hover.png"
+dest_files=["res://.godot/imported/Peek A Boo Return Button Hover.png-efb851463c15392103ce72d56984bd19.ctex"]
 
 [params]
 

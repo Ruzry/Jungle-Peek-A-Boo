@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhoo7ist3p0dd"
-path="res://.godot/imported/Peek A Boo Touch Button Black.png-e497ae88b457075a0b81ac2f45aba47d.ctex"
+uid="uid://dbxry07sugjeh"
+path="res://.godot/imported/Peek A Boo Jungle Leaf 2.png-75529038cdb3485d8d140fea8e4329cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Touch Button Black.png"
-dest_files=["res://.godot/imported/Peek A Boo Touch Button Black.png-e497ae88b457075a0b81ac2f45aba47d.ctex"]
+source_file="res://Assets/Art/Game/Peek A Boo Jungle Leaf 2.png"
+dest_files=["res://.godot/imported/Peek A Boo Jungle Leaf 2.png-75529038cdb3485d8d140fea8e4329cd.ctex"]
 
 [params]
 

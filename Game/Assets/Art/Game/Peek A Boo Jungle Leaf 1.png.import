@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpboysabobwkh"
-path="res://.godot/imported/Peek A Boo Cloud 0 Opaque.png-fb165043ca225d6474e512f6b031372c.ctex"
+uid="uid://dae8cx3o6nxmr"
+path="res://.godot/imported/Peek A Boo Jungle Leaf 1.png-19869500c8fc3c537c7556bda5bc9057.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Peek A Boo Cloud 0 Opaque.png"
-dest_files=["res://.godot/imported/Peek A Boo Cloud 0 Opaque.png-fb165043ca225d6474e512f6b031372c.ctex"]
+source_file="res://Assets/Art/Game/Peek A Boo Jungle Leaf 1.png"
+dest_files=["res://.godot/imported/Peek A Boo Jungle Leaf 1.png-19869500c8fc3c537c7556bda5bc9057.ctex"]
 
 [params]
 

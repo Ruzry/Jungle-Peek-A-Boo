@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwct7xl8g4pyh"
-path="res://.godot/imported/Jungle Peek A Boo Menu Button Hover.png-dbe00b850d7f6ae5ee341a014ea4f76e.ctex"
+uid="uid://cvrj2hp4lrf2k"
+path="res://.godot/imported/Jungle Peek A Boo Menu Button UnPressed.png-b38be7088a543828ff31ae676a7a36b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Jungle Peek A Boo Menu Button Hover.png"
-dest_files=["res://.godot/imported/Jungle Peek A Boo Menu Button Hover.png-dbe00b850d7f6ae5ee341a014ea4f76e.ctex"]
+source_file="res://Assets/Art/UI/Jungle Peek A Boo Menu Button UnPressed.png"
+dest_files=["res://.godot/imported/Jungle Peek A Boo Menu Button UnPressed.png-b38be7088a543828ff31ae676a7a36b5.ctex"]
 
 [params]
 
