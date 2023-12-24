@@ -1,12 +1,15 @@
-[gd_scene load_steps=46 format=3 uid="uid://csswk5tkdgm6k"]
+[gd_scene load_steps=50 format=3 uid="uid://csswk5tkdgm6k"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_55div"]
 [ext_resource type="Script" path="res://RandomAmbientSound.gd" id="2_ak0co"]
 [ext_resource type="AudioStream" uid="uid://cf2ub2n542xt8" path="res://Assets/Sound/Jungle Peek A Boo Game BG Music.mp3" id="2_jynfr"]
 [ext_resource type="AudioStream" uid="uid://bketymx3c1beb" path="res://Assets/Sound/SFX/Jungle Peek A Boo Rustle sfx 1.wav" id="4_kg6nk"]
 [ext_resource type="AudioStream" uid="uid://c4wk56vsvplaf" path="res://Assets/Sound/Voice/Jungle Peek A Boo Pee Audio.mp3" id="5_a56jk"]
+[ext_resource type="AudioStream" uid="uid://2aceg4chlosp" path="res://Assets/Sound/SFX/Jungle Peek A Boo Lion Reveal sfx.wav" id="5_o2w6k"]
+[ext_resource type="AudioStream" uid="uid://c7h34omxefl5j" path="res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Reveal sfx.wav" id="6_frpbc"]
 [ext_resource type="AudioStream" uid="uid://dm110mvkawcdo" path="res://Assets/Sound/Voice/Jungle Peek A Boo Ka Audio.mp3" id="6_j446u"]
 [ext_resource type="AudioStream" uid="uid://cwqhg4au34tm8" path="res://Assets/Sound/Voice/Jungle Peek A Boo Boo Audio.mp3" id="7_7jrpg"]
+[ext_resource type="AudioStream" uid="uid://dks4uarfbc7i7" path="res://Assets/Sound/SFX/Jungle Peek A Boo Monkey Ambience sfx.wav" id="7_l0hiq"]
 [ext_resource type="Texture2D" uid="uid://s4v1hlpuodjn" path="res://Assets/Art/Game/Peek A Boo Background.png" id="8_hjmqa"]
 [ext_resource type="Texture2D" uid="uid://csuc3msi7nrwu" path="res://Assets/Art/Game/Peek A Boo Vines.png" id="9_vihpn"]
 [ext_resource type="Texture2D" uid="uid://b068omrlt2utn" path="res://Assets/Art/Game/Peek A Boo Background Trees 50.png" id="10_qirnt"]
@@ -737,11 +740,14 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 3.7),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 2.7, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"setRoarAudioStream"
+}, {
+"args": [],
+"method": &"playAnimalRevealRoar"
 }, {
 "args": [],
 "method": &"showResetButton"
@@ -882,7 +888,283 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("AnimalRoarAudio:playing")
+tracks/17/path = NodePath("AnimalAudio/AnimalRoarAudio:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PointStarParticles:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(531, 254), Vector2(764, 264), Vector2(535, 385), Vector2(740, 385), Vector2(495, 555), Vector2(835, 555)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("PointStarParticles:emitting")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BoxStyleParticles:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(653, 238), Vector2(653, 238), Vector2(653, 375), Vector2(653, 375), Vector2(625, 533)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("BoxStyleParticles:emitting")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.8, 1.1, 2.1, 2.4, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_peia3"]
+resource_name = "Reveal2"
+length = 3.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Peek:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.952941, 0, 0), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("A:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.4, 1.8, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.952941, 0, 0), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boo:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.3, 2.7, 3.3, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.952941, 0, 0), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 1), Color(1, 0.952941, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LeftJungleLeaves:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.9, 2, 2.1, 2.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(5, -5), Vector2(-5, 5), Vector2(5, -5), Vector2(0, 0), Vector2(0, 0), Vector2(5, -5), Vector2(-5, 5), Vector2(5, -5), Vector2(-5, 5), Vector2(0, 0), Vector2(0, 0), Vector2(5, -5), Vector2(-5, 5), Vector2(5, -5), Vector2(-350, 25)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightJungleLeaves:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 2, 2.1, 2.2, 2.3, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1331, 0), Vector2(1326, -5), Vector2(1336, 5), Vector2(1326, -5), Vector2(1331, 0), Vector2(1331, 0), Vector2(1326, -5), Vector2(1336, 5), Vector2(1326, -5), Vector2(1336, 5), Vector2(1331, 0), Vector2(1331, 0), Vector2(1326, -5), Vector2(1336, 5), Vector2(1326, -5), Vector2(1700, 25)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.7, 3.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"setRoarAudioStream"
+}, {
+"args": [],
+"method": &"playAnimalRevealRoar"
+}, {
+"args": [],
+"method": &"showResetButton"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RustlingAudio:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.3, 1.9, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("VoiceAudio/PeeAudio:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.3, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("VoiceAudio/KaAudio:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("VoiceAudio/BooAudio:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Animal/Head:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Animal/LeftPaw:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-250, 75), Vector2(-250, 75), Vector2(-330, 45)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Animal/LeftPaw:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Animal/LeftPaw:z_index")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 1]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Animal/RightPaw:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(250, 75), Vector2(250, 75), Vector2(330, 45)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Animal/RightPaw:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Animal/RightPaw:z_index")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 0, 1]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("AnimalAudio/AnimalRoarAudio:playing")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
@@ -944,7 +1226,8 @@ tracks/21/keys = {
 _data = {
 "Attract": SubResource("Animation_go6d4"),
 "Idle": SubResource("Animation_skpcw"),
-"Reveal": SubResource("Animation_b10ic")
+"Reveal": SubResource("Animation_b10ic"),
+"Reveal2": SubResource("Animation_peia3")
 }
 
 [sub_resource type="Animation" id="Animation_d5q65"]
@@ -1041,6 +1324,30 @@ autoplay = true
 stream = ExtResource("4_kg6nk")
 pitch_scale = 2.0
 
+[node name="AnimalAudio" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimalRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
+bus = &"SFX"
+
+[node name="LionRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
+stream = ExtResource("5_o2w6k")
+volume_db = 10.076
+bus = &"SFX"
+
+[node name="ElephantRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
+stream = ExtResource("6_frpbc")
+volume_db = -2.519
+bus = &"SFX"
+
+[node name="GorillaRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
+stream = ExtResource("7_l0hiq")
+volume_db = 3.958
+bus = &"SFX"
+
 [node name="VoiceAudio" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -1054,15 +1361,12 @@ bus = &"SFX"
 
 [node name="KaAudio" type="AudioStreamPlayer2D" parent="VoiceAudio"]
 stream = ExtResource("6_j446u")
-pitch_scale = 1.05
 bus = &"SFX"
 
 [node name="BooAudio" type="AudioStreamPlayer2D" parent="VoiceAudio"]
 stream = ExtResource("7_7jrpg")
 pitch_scale = 1.1
 bus = &"SFX"
-
-[node name="AnimalRoarAudio" type="AudioStreamPlayer2D" parent="."]
 
 [node name="BgAnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../FgAnimationPlayer")
@@ -1177,12 +1481,13 @@ position = Vector2(-250, 75)
 
 [node name="LionLeftPaw" type="Sprite2D" parent="Animal/LeftPaw"]
 visible = false
-scale = Vector2(-1, 1)
+position = Vector2(50, 0)
+scale = Vector2(-0.9, 0.9)
 texture = ExtResource("19_m1uml")
 
 [node name="ElephantLeftPaw" type="Sprite2D" parent="Animal/LeftPaw"]
 visible = false
-position = Vector2(150, 35)
+position = Vector2(100, 35)
 texture = ExtResource("20_lxcip")
 
 [node name="GorillaLeftPaw" type="Sprite2D" parent="Animal/LeftPaw"]
@@ -1193,11 +1498,13 @@ position = Vector2(250, 75)
 
 [node name="LionRightPaw" type="Sprite2D" parent="Animal/RightPaw"]
 visible = false
+position = Vector2(-50, 0)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("19_m1uml")
 
 [node name="ElephantRightPaw" type="Sprite2D" parent="Animal/RightPaw"]
 visible = false
-position = Vector2(-150, 35)
+position = Vector2(-100, 35)
 rotation = 3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("20_lxcip")
@@ -1207,6 +1514,7 @@ scale = Vector2(-1, 1)
 texture = ExtResource("21_guhv4")
 
 [node name="LeftJungleLeaves" type="Sprite2D" parent="."]
+position = Vector2(2.6077e-06, -2.6077e-06)
 
 [node name="LeftJungleLeaves_0" type="Sprite2D" parent="LeftJungleLeaves"]
 position = Vector2(202, 356)
@@ -1312,16 +1620,27 @@ position = Vector2(671, 702)
 texture = ExtResource("11_cwwol")
 
 [node name="PointStarParticles" type="GPUParticles2D" parent="."]
-position = Vector2(835, 555)
+position = Vector2(684.091, 385)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("24_ywdcf")
 
 [node name="BoxStyleParticles" type="GPUParticles2D" parent="."]
-position = Vector2(625, 533)
+position = Vector2(653, 375)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("26_rlhol")
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+position = Vector2(657, -46)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_q176f")
+texture = ExtResource("33_wa1wb")
+lifetime = 4.0
+preprocess = 5.0
+explosiveness = 0.12
+randomness = 0.19
 
 [node name="Peek" type="Label" parent="."]
 z_index = 2
@@ -1349,7 +1668,7 @@ offset_top = 288.0
 offset_right = 677.0
 offset_bottom = 388.0
 pivot_offset = Vector2(38, 50)
-theme_override_colors/font_color = Color(1, 0.952941, 0, 0)
+theme_override_colors/font_color = Color(1, 0.952941, 0, 0.8)
 theme_override_fonts/font = ExtResource("14_ywep8")
 theme_override_font_sizes/font_size = 100
 text = "A"
@@ -1406,17 +1725,6 @@ text = "Reset"
 offset_right = 73.0
 offset_bottom = 57.0
 theme = ExtResource("29_xbl6h")
-
-[node name="SnowParticles" type="GPUParticles2D" parent="."]
-position = Vector2(657, -46)
-emitting = false
-amount = 100
-process_material = SubResource("ParticleProcessMaterial_q176f")
-texture = ExtResource("33_wa1wb")
-lifetime = 4.0
-preprocess = 5.0
-explosiveness = 0.12
-randomness = 0.19
 
 [connection signal="finished" from="RandomAmbientSoundEvent/AmbienceAudio" to="RandomAmbientSoundEvent" method="playRandomSound"]
 [connection signal="timeout" from="AttractTimer" to="." method="playAttractAnimation"]

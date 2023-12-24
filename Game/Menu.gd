@@ -4,19 +4,15 @@ extends Control
 @onready var sfxAudio = $SfxAudio
 @onready var bgAudio = $BackgroundAudio
 
-#Buttons
-@onready var lionButton = $Buttons/LionButton
-@onready var elephantButton = $Buttons/ElephantButton
-@onready var gorillaButton = $Buttons/GorillaButton
-@onready var exitButton = $Buttons/ExitButton
-
 #Game Scene
+@onready var buttons: Array = [$Buttons/LionButton, $Buttons/ElephantButton, $Buttons/GorillaButton, $Buttons/ExitButton]
 var gameScene
-var christmasMode: bool = true
-var buttons: Array
+var christmasMode: bool
 
 func _ready():
-	buttons = [lionButton, elephantButton, gorillaButton, exitButton]
+	var currentDate = Time.get_datetime_dict_from_system()
+	if currentDate.month == 12 && currentDate.day > 14:
+		christmasMode = true;
 	
 	$ChristmasTitleBackground.visible = christmasMode
 	$TitleBackground.visible = !christmasMode

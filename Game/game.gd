@@ -39,6 +39,7 @@ enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA }
 @onready var lionRoar = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Lion Reveal sfx.wav")
 @onready var elephantRoar = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Elephant Reveal sfx.wav")
 @onready var gorillaRoar = preload("res://Assets/Sound/SFX/Jungle Peek A Boo Monkey Ambience sfx.wav")
+@onready var animalRoars: Array = [$AnimalAudio/LionRoarAudio, $AnimalAudio/ElephantRoarAudio, $AnimalAudio/GorillaRoarAudio]
 
 #Animal node Arrays
 var lionNodeSprites: Array
@@ -47,9 +48,8 @@ var gorillaNodeSprites: Array
 var christmasNodeSprites: Array
 
 var currentAnimal: ANIMAL_TYPE
-var animalAudioStreams: Array
 
-var christmasMode: bool
+var christmasMode: bool = false
 
 signal menuReturn
 
@@ -58,7 +58,6 @@ func _ready():
 	lionNodeSprites = [lionHeadSprite, lionLeftPawSprite, lionRightPawSprite]
 	elephantNodeSprites = [elephantHeadSprite, elephantBodySprite, elephantLeftPawSprite, elephantRightPawSprite]
 	gorillaNodeSprites = [gorillaHeadSprite, gorillaLeftPawSprite, gorillaRightPawSprite]
-	animalAudioStreams = [lionRoar, elephantRoar, gorillaRoar]
 	
 	if christmasMode:
 		christmasNodeSprites = [lionXmasHeadSprite, elephantXmasHeadSprite, gorillaXmasHeadSprite]
@@ -108,9 +107,9 @@ func playAttractAnimation():
 func resetFgAnimation():
 	fgAnimPlayer.play("Idle")
 
-# Sets roar based on currentAnimal.
-func setRoarAudioStream():
-	animalRoarAudio.stream = animalAudioStreams[currentAnimal]
+#Plays animal roar based on currentAnimal
+func playAnimalRevealRoar():
+	animalRoars[currentAnimal].play()
 
 # Start Reveal animation.
 func startReveal():
