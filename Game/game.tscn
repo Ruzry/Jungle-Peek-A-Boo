@@ -888,58 +888,46 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("AnimalAudio/AnimalRoarAudio:playing")
+tracks/17/path = NodePath("PointStarParticles:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("PointStarParticles:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
 "times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(531, 254), Vector2(764, 264), Vector2(535, 385), Vector2(740, 385), Vector2(495, 555), Vector2(835, 555)]
 }
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("PointStarParticles:emitting")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PointStarParticles:emitting")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false]
 }
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("BoxStyleParticles:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BoxStyleParticles:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
 "times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(653, 238), Vector2(653, 238), Vector2(653, 375), Vector2(653, 375), Vector2(625, 533)]
 }
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("BoxStyleParticles:emitting")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BoxStyleParticles:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.8, 1.1, 2.1, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -1164,58 +1152,46 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("AnimalAudio/AnimalRoarAudio:playing")
+tracks/17/path = NodePath("PointStarParticles:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 2.5, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("PointStarParticles:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
 "times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(531, 254), Vector2(764, 264), Vector2(535, 385), Vector2(740, 385), Vector2(495, 555), Vector2(835, 555)]
 }
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("PointStarParticles:emitting")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("PointStarParticles:emitting")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.9, 1.1, 2.2, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true, false, true, false]
 }
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("BoxStyleParticles:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("BoxStyleParticles:position")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
 "times": PackedFloat32Array(0.1, 0.9, 1.1, 2.2, 2.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(653, 238), Vector2(653, 238), Vector2(653, 375), Vector2(653, 375), Vector2(625, 533)]
 }
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("BoxStyleParticles:emitting")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("BoxStyleParticles:emitting")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.8, 1.1, 2.1, 2.4, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
@@ -1329,9 +1305,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="AnimalRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
-bus = &"SFX"
 
 [node name="LionRoarAudio" type="AudioStreamPlayer2D" parent="AnimalAudio"]
 stream = ExtResource("5_o2w6k")
@@ -1514,7 +1487,6 @@ scale = Vector2(-1, 1)
 texture = ExtResource("21_guhv4")
 
 [node name="LeftJungleLeaves" type="Sprite2D" parent="."]
-position = Vector2(2.6077e-06, -2.6077e-06)
 
 [node name="LeftJungleLeaves_0" type="Sprite2D" parent="LeftJungleLeaves"]
 position = Vector2(202, 356)
@@ -1620,13 +1592,13 @@ position = Vector2(671, 702)
 texture = ExtResource("11_cwwol")
 
 [node name="PointStarParticles" type="GPUParticles2D" parent="."]
-position = Vector2(684.091, 385)
+position = Vector2(531, 254)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("24_ywdcf")
 
 [node name="BoxStyleParticles" type="GPUParticles2D" parent="."]
-position = Vector2(653, 375)
+position = Vector2(653, 238)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5benv")
 texture = ExtResource("26_rlhol")
@@ -1668,7 +1640,7 @@ offset_top = 288.0
 offset_right = 677.0
 offset_bottom = 388.0
 pivot_offset = Vector2(38, 50)
-theme_override_colors/font_color = Color(1, 0.952941, 0, 0.8)
+theme_override_colors/font_color = Color(1, 0.952941, 0, 0)
 theme_override_fonts/font = ExtResource("14_ywep8")
 theme_override_font_sizes/font_size = 100
 text = "A"

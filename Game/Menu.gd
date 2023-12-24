@@ -43,7 +43,7 @@ func exitGame():
 func playButtonPressSound():
 	sfxAudio.play()
 
-
+# Disabled buttons so they cant be pressed during game.
 func disableMenu(flag: bool):
 	for n in buttons.size():
 		buttons[n].disabled = flag
