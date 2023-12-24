@@ -12,12 +12,15 @@ extends Control
 
 #Game Scene
 var gameScene
-
+var christmasMode: bool = true
 var buttons: Array
 
 func _ready():
 	buttons = [lionButton, elephantButton, gorillaButton, exitButton]
-
+	
+	$ChristmasTitleBackground.visible = christmasMode
+	$TitleBackground.visible = !christmasMode
+	$SnowParticles.emitting = christmasMode
 
 # Removes Game Scene and resumes BG audio.
 func handleMenuReturn():
@@ -31,6 +34,7 @@ func startGameScene(animalIndex):
 	gameScene = preload("res://game.tscn").instantiate()
 	gameScene.connect("menuReturn", func(): handleMenuReturn())
 	gameScene.setCurrentAnimal(animalIndex)
+	gameScene.setChristmasMode(christmasMode)
 	bgAudio.stop()
 	disableMenu(true)
 	get_tree().root.add_child(gameScene)

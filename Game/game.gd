@@ -28,6 +28,11 @@ enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA }
 @onready var gorillaLeftPawSprite = $Animal/LeftPaw/GorillaLeftPaw
 @onready var gorillaRightPawSprite = $Animal/RightPaw/GorillaRightPaw
 
+#Christmas Nodes
+@onready var lionXmasHeadSprite = $Animal/Head/ChristmasLionHead
+@onready var elephantXmasHeadSprite = $Animal/Head/ChristmasElephantHead
+@onready var gorillaXmasHeadSprite = $Animal/Head/ChristmasGorillaHead
+
 #Audio
 @onready var bgAudio = $BGAudio
 @onready var animalRoarAudio = $AnimalRoarAudio
@@ -39,9 +44,12 @@ enum ANIMAL_TYPE { LION, ELEPHANT, GORILLA }
 var lionNodeSprites: Array
 var elephantNodeSprites: Array
 var gorillaNodeSprites: Array
+var christmasNodeSprites: Array
 
 var currentAnimal: ANIMAL_TYPE
 var animalAudioStreams: Array
+
+var christmasMode: bool
 
 signal menuReturn
 
@@ -51,8 +59,14 @@ func _ready():
 	elephantNodeSprites = [elephantHeadSprite, elephantBodySprite, elephantLeftPawSprite, elephantRightPawSprite]
 	gorillaNodeSprites = [gorillaHeadSprite, gorillaLeftPawSprite, gorillaRightPawSprite]
 	animalAudioStreams = [lionRoar, elephantRoar, gorillaRoar]
+	
+	if christmasMode:
+		christmasNodeSprites = [lionXmasHeadSprite, elephantXmasHeadSprite, gorillaXmasHeadSprite]
+		$SnowParticles.emitting = true
+	
 	setAnimalVisiblity()
 	resetGame()
+
 
 # Sets game components to default state.
 func resetGame():
@@ -78,6 +92,13 @@ func setAnimalVisiblity():
 		
 	for n in gorillaNodeSprites.size():
 		gorillaNodeSprites[n].visible = true if (currentAnimal == ANIMAL_TYPE.GORILLA) else false
+		
+	if christmasMode:
+		christmasNodeSprites[currentAnimal].visible = true
+		lionNodeSprites[0].visible = false
+		elephantNodeSprites[0].visible = false
+		gorillaNodeSprites[0].visible = false
+		
 
 #Plays attract animation based on AttractTimer
 func playAttractAnimation():
@@ -107,3 +128,6 @@ func showResetButton():
 func returnToMenu():
 	emit_signal("menuReturn")
 
+
+func setChristmasMode(flag: bool):
+	christmasMode = flag
