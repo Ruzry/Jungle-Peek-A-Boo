@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmlckx626usll"]
+[gd_scene load_steps=20 format=3 uid="uid://dmlckx626usll"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_j84mj"]
 [ext_resource type="FontFile" uid="uid://dlq006xoyyp4b" path="res://Assets/Font/digital_disco/DigitalDisco.ttf" id="2_05yha"]
@@ -13,7 +13,27 @@
 [ext_resource type="Texture2D" uid="uid://bats18brm1uvy" path="res://Assets/Art/Menu/Peek A Boo Cloud 1 Opaque.png" id="10_cebgk"]
 [ext_resource type="Texture2D" uid="uid://ds5ed63lsq6ig" path="res://Assets/Art/Menu/Peek A Boo Menu Foreground.png" id="11_ao0s0"]
 [ext_resource type="Texture2D" uid="uid://b0tkrgkwlgvis" path="res://Assets/Art/Menu/Peek A Boo Title Background.png" id="12_mtaxl"]
+[ext_resource type="Texture2D" uid="uid://b8vnp30jkfo4b" path="res://Assets/Art/Christmas/Peek A Boo Title Background Christmas.png" id="14_67mxc"]
 [ext_resource type="Theme" uid="uid://d25d7supeakyh" path="res://Assets/Themes/Peek A Boo Menu Button.tres" id="14_hgmnf"]
+[ext_resource type="Texture2D" uid="uid://blvlveu33dfju" path="res://Assets/Art/Christmas/Jungle Peek A Boo Snow Particle.png" id="15_mli3j"]
+
+[sub_resource type="Gradient" id="Gradient_03hdd"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.447552, 0.990676)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k5xll"]
+gradient = SubResource("Gradient_03hdd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1qb4b"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(800, 1, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
+gravity = Vector3(0, 98, 0)
+color_ramp = SubResource("GradientTexture1D_k5xll")
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -94,6 +114,29 @@ theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
 text = "Jungle Peek A Boo"
 
+[node name="ChristmasTitleBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(701, 150)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("14_67mxc")
+
+[node name="Title" type="Label" parent="ChristmasTitleBackground"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -616.8
+offset_top = -182.0
+offset_right = 198.2
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.952941, 0, 1)
+theme_override_fonts/font = ExtResource("2_05yha")
+theme_override_font_sizes/font_size = 50
+text = "Jungle Peek A Boo"
+
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -133,7 +176,7 @@ theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 40
 text = " Play as Gorilla"
 
-[node name="Exit Button" type="Button" parent="Buttons"]
+[node name="ExitButton" type="Button" parent="Buttons"]
 custom_minimum_size = Vector2(308, 107)
 layout_mode = 2
 theme = ExtResource("14_hgmnf")
@@ -143,11 +186,22 @@ theme_override_fonts/font = ExtResource("2_05yha")
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+position = Vector2(657, -46)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_1qb4b")
+texture = ExtResource("15_mli3j")
+lifetime = 4.0
+preprocess = 5.0
+explosiveness = 0.12
+randomness = 0.19
+
 [connection signal="button_down" from="Buttons/LionButton" to="." method="playButtonPressSound"]
 [connection signal="pressed" from="Buttons/LionButton" to="." method="startGameScene" binds= [0]]
 [connection signal="button_down" from="Buttons/ElephantButton" to="." method="playButtonPressSound"]
 [connection signal="pressed" from="Buttons/ElephantButton" to="." method="startGameScene" binds= [1]]
 [connection signal="button_down" from="Buttons/GorillaButton" to="." method="playButtonPressSound"]
 [connection signal="pressed" from="Buttons/GorillaButton" to="." method="startGameScene" binds= [2]]
-[connection signal="button_down" from="Buttons/Exit Button" to="." method="playButtonPressSound"]
-[connection signal="pressed" from="Buttons/Exit Button" to="." method="exitGame"]
+[connection signal="button_down" from="Buttons/ExitButton" to="." method="playButtonPressSound"]
+[connection signal="pressed" from="Buttons/ExitButton" to="." method="exitGame"]
