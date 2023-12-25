@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ni0kxijp306"
-path="res://.godot/imported/Jungle Peek A Boo App Icon.png-49fe9151915238a91b02af050f74625c.ctex"
+uid="uid://5ujpt55w2edq"
+path="res://.godot/imported/Jungle Peek A Boo App Icon.png-809cf700caad7096b2bf29717b9288d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Jungle Peek A Boo App Icon.png"
-dest_files=["res://.godot/imported/Jungle Peek A Boo App Icon.png-49fe9151915238a91b02af050f74625c.ctex"]
+source_file="res://Assets/Art/Icons/Jungle Peek A Boo App Icon.png"
+dest_files=["res://.godot/imported/Jungle Peek A Boo App Icon.png-809cf700caad7096b2bf29717b9288d0.ctex"]
 
 [params]
 
